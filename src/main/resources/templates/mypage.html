@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Mypage</title>
+</head>
+<body>
+	<h1>My page</h1>
+	<!-- form starts here -->
+	<form th:action="@{/mypage}" method="post">
+		<!-- get username from login screen -->
+		<div>
+			<p>Hello, [[${userName}]]</p>
+		</div>
+		<!-- friend search box -->
+		<div>
+			<input type="search" name="receiverEmail" placeholder="Serch users..">
+			<button type="submit" name="submit">Submit</button>
+		</div>
+		<!-- show error message if user chose themselves-->
+		<p th:if="${sameUser}">You cannot choose yourself</p>
+	</form>
+	<!-- form ends here -->
+	<!-- form starts here -->
+	<form th:action="@{/chat}" method="post">
+		<!-- show name of correspondent and button for page transition if found -->
+		<div th:if="${receiverName}">
+			<p>Found: [[${receiverName}]]</p>
+			<button type="submit" name="talk">Talk</button>
+		</div>
+		<p th:if="${receiverNotFound}">User not found</p>
+	</form>
+	<!-- form ends here -->
+	<!-- form starts here -->
+	<form th:action="@{/logout}" method="post">
+		<button type="submit" name="logout">Logout</button>
+	</form>
+	<!-- form ends here -->
+</body>
+</html>
