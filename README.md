@@ -14,12 +14,16 @@
 
 ## Table of Contents
 1.About the Project
+
 2.Environment
+
 3.Directory
+
 4.How to Build
+
 5.How to Use
 
-##Enviroment
+## Enviroment
 - Java 21
 - Spring Boot 4.0.6
 - Spring Security
@@ -30,7 +34,7 @@
 - Lombok
 
 
-##Directory
+## Directory
 ```text
 .
 ├── HELP.md
@@ -67,7 +71,7 @@
 
 7.Commentout"#spring.sql.init.mode=always" from process 5.
 
-##How to Use
+## How to Use
 1. Open the application in two different browsers.
 
 2.Use the Login information created "data.sql" and login to the application.
