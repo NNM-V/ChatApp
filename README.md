@@ -47,7 +47,7 @@
     ├── maven-status
     ├── spring-aot
     └── test-classes
-```text
+```
 
 ## How to Bulid
 1.Clone the repository to your local enviroment.
