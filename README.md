@@ -13,15 +13,14 @@
 # Private chat application
 
 ## Table of Contents
-1.About the Project
+-About the Project
+-Environment
+-Directory
+-How to Build
+-How to Use
 
-2.Environment
-
-3.Directory
-
-4.How to Build
-
-5.How to Use
+## About the Project
+Secured one on one private chat web application with SpringSecurity and WebSocket.
 
 ## Enviroment
 - Java 21
