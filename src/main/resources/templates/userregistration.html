@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>UserRegister</title>
+	<link th:href="@{/style/common.css}" rel="stylesheet">
+	<link th:href="@{/style/authentication.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="authentication">
+		<h2>User Register</h2>
+		<!-- form starts here -->
+		<form th:action="@{/userregistration}" th:object="${userRegistrationForm}" method="post" >
+			<p th:if="${userEmailExists}">User with this E-mail already exists</p>
+			<p th:if="${userNameExists}">Username already exists</p>
+			<!-- userId area -->
+			<div class="form-group">
+				<input type="text" th:field="*{userEmail}" placeholder="Email" class="form-control"/>
+				<span th:if="${#fields.hasErrors('userEmail')}" th:errors="*{userEmail}"></span>
+				<!-- name area -->
+				<input type="text" th:field="*{userName}" placeholder="Username" class="form-control"/>
+				<span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+				<!-- password area -->
+				<input type="text" th:field="*{password}" placeholder="Password" class="form-control"/>
+				<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+				<!-- birthday area -->
+				<input type="text" th:field="*{birthday}" placeholder="Date of birth (yyyy/MM/dd)" class="form-control"/>
+				<span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></span>
+			</div>
+			<!--user registry button -->
+			<button type="submit" name="register" class="btn btn--orange">register</button>
+		</form>
+		<!-- form ends here -->
+	</div>
+</body>
+</html>

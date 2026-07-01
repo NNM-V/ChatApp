@@ -3,38 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mypage</title>
+	<link th:href="@{/style/common.css}" rel="stylesheet">
+	<link th:href="@{/style/mypage.css}" rel="stylesheet">
 </head>
 <body>
-	<h1>My page</h1>
-	<!-- form starts here -->
-	<form th:action="@{/mypage}" method="post">
+	<div class="mypage">
 		<!-- get username from login screen -->
-		<div>
-			<p>Hello, [[${userName}]]</p>
+		<div class="header">
+			<h2>Welcome, [[${userName}]]</h2>
+			<!-- form ends here -->
+			<!-- form starts here -->
+			<form th:action="@{/logout}" method="post" class="logout-button">
+				<button type="submit" name="logout" class="btn btn--white">Logout</button>
+			</form>
+			<!-- form ends here -->
 		</div>
-		<!-- friend search box -->
-		<div>
-			<input type="search" name="receiverEmail" placeholder="Serch users..">
-			<button type="submit" name="submit">Submit</button>
-		</div>
-		<!-- show error message if user chose themselves-->
-		<p th:if="${sameUser}">You cannot choose yourself</p>
-	</form>
-	<!-- form ends here -->
-	<!-- form starts here -->
-	<form th:action="@{/chat}" method="post">
-		<!-- show name of correspondent and button for page transition if found -->
-		<div th:if="${receiverName}">
-			<p>Found: [[${receiverName}]]</p>
-			<button type="submit" name="talk">Talk</button>
-		</div>
-		<p th:if="${receiverNotFound}">User not found</p>
-	</form>
-	<!-- form ends here -->
-	<!-- form starts here -->
-	<form th:action="@{/logout}" method="post">
-		<button type="submit" name="logout">Logout</button>
-	</form>
-	<!-- form ends here -->
+		<!-- form starts here -->
+		<form th:action="@{/mypage}" method="post">
+			<div class="input-container">
+				<!-- friend search box -->
+				<input type="search" name="receiverName" class="form-control" placeholder="Serch users.." >
+				<button type="submit" name="submit" class="btn btn--orange">Submit</button>
+			</div>
+		</form>
+		<!-- form ends here -->
+		<!-- form starts here -->
+		<form th:action="@{/chat}" method="post">
+			<div class="result-container">
+				<!-- show name of correspondent and button for page transition if found -->
+					<div th:if="${receiverName}">
+						<p>Found: [[${receiverName}]]</p>
+						<button type="submit" name="talk" class="btn btn--orange">Talk</button>
+					</div>
+				<!-- show error message if user chose themselves-->
+				<p th:if="${sameUser}">You cannot choose yourself</p>
+				<p th:if="${receiverNotFound}">User not found</p>
+			</div>
+			
+		</form>
+	</div>
 </body>
 </html>
