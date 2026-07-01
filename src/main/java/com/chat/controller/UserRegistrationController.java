@@ -34,17 +34,20 @@ public class UserRegistrationController {
 			return getUserRegistration(form,model);
 		}
 		
+		//Show error message if Email entered already exisits in the database
 		if(repo.existsByUserEmail(form.getUserEmail()) == true){
 			redirect.addFlashAttribute("userEmailExists",true);
 			return "redirect:/userregistration";
 		}
+		//Show error message if username entered already exisits in the database
 		if(repo.existsByUserName(form.getUserName()) == true){
 			redirect.addFlashAttribute("userNameExists",true);
 			return "redirect:/userregistration";
 		}
-
+		
 		//Add user input to users table and redirect to login 
 		service.addUser(form);
+		
 		return "redirect:/login";
 	}
 }

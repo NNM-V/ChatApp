@@ -9,7 +9,8 @@ import com.chat.repository.entity.UserRegistration;
 public interface UserRepository extends JpaRepository<UserRegistration,Long>{
 	//Find user on SQL from username
 	UserRegistration findByUserName(String userName);
-	//Check if email exists on database
-	boolean existsByUserEmail(String userEmail);
+	//Check if user exists on database from Email
+	boolean existsByUserEmail(String userName);
+	//Check if user exists on database from username
 	boolean existsByUserName(String userName);
 }

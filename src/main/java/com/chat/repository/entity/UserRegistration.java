@@ -13,6 +13,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "users")
+//Create database "users"
 public class UserRegistration {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)

@@ -29,13 +29,14 @@ public class ChatController {
 
 	@GetMapping("/chat")
 	public String chat(Model model) {
-		//Set user
+		//Get sender information from username the SpringSecurity holds
 		String senderName = SecurityContextHolder.getContext().getAuthentication().getName();
 		System.out.println("chat user:" + senderName);
-		//Set username to html
+		//Set sendername to html
 		model.addAttribute("userName", senderName);
-		//Set receiver
+		//Get receivername from session data
 		String receiverName = (String)session.getAttribute("receiverName");
+		//Set recievername to html
 		model.addAttribute("receiverName", receiverName);
 		
 		return "chat";
@@ -43,16 +44,19 @@ public class ChatController {
 	
 	@MessageMapping("/chat")
 	public void sendMessage(Principal principal, @Payload ChatMessage msg) throws Exception{
+		//Get sender information from user data the SpringSecurity holds
 		msg.setSender(principal.getName());
+		//Set sender and message to DTO
 		OutputMessage out = new OutputMessage(msg.getSender(), msg.getText());
 		System.out.println("sender: " + msg.getSender() + " text : " + msg.getText());	
 		System.out.println("receiver: " + msg.getReceiver());
+		//Direct to reciever
 		simpleMessagingTemplate.convertAndSendToUser(msg.getReceiver(), "/queue/chat", out);
-		//System.out.println("receiver: " + msg.getReceiver() + " msg: " + out);
 	}
 	
 	@PostMapping("/returntomypage")
 	public String postReturnToMyPage(Model model) {
+		//Redirect to mypage if back button is pressed
 		return "redirect:/mypage";
 		
 	}

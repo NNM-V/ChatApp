@@ -38,10 +38,10 @@ public class WebSecurityConfig {
 				.usernameParameter("userName")
                 .passwordParameter("password")
              )
-			.logout(logout -> logout                   // [追加] ログアウト設定
-	                .logoutUrl("/logout")                  // [追加] ログアウトを処理するURLを指定
-	                .logoutSuccessUrl("/login?logout")     // [追加] ログアウト成功時のリダイレクト先を指定
-	                .invalidateHttpSession(true)           // [追加] ログアウト時にセッションを無効にする
+			.logout(logout -> logout                   
+	                .logoutUrl("/logout")                  
+	                .logoutSuccessUrl("/login?logout")    
+	                .invalidateHttpSession(true)
 	                .deleteCookies("JSESSIONID")
 	          );
 		return http.build();
