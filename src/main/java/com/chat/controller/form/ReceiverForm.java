@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class ReceiverForm {
-	private String receiverEmail;
+	private String receiverName;
 }

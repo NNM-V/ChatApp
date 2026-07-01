@@ -3,22 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
+	<link th:href="@{/style/common.css}" rel="stylesheet">
+	<link th:href="@{/style/authentication.css}" rel="stylesheet">
+	<link th:href="@{/style/login.css}" rel="stylesheet">
 </head>
 <body>
-	<h1>Login</h1>
-	<form th:action="@{/login}" method="post">
-		<div>
-			<label>Username: </label>
-			<input type="text" name="userEmail" required/>
+	<div class="login authentication">
+		<h2>Login</h2>
+		<div th:if="${param.error}">
+			Invalid username and password.
+		</div>	
+		<form th:action="@{/login}" method="post">
+			<div class="form-group">
+				<input type="text" name="userName" class="form-control" placeholder="Username" required/></label>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" class="form-control" placeholder="Password" required/></label>
+			</div>
+			<button type="submit" name="login" class="btn btn--orange">Login</button>
+		</form>
+		<div class="register-user">
+			<a th:href="@{/userregistration}"> Sign up</a>
 		</div>
-		<div>
-			<label>Password: </label>
-			<input type="password" name="password" required/>
-		</div>
-		<p th:if="${passwordNotMatching}">Incorrect password</p>
-		<p th:if="${userNotFound}">User not found</p>
-		<button type="submit" name="login">Login</button>
-		<a th:href="@{/signup}">Sign up</a>
-	</form>
+	</div>
 </body>
 </html>

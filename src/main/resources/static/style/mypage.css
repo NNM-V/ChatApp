@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.mypage {
+	height: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+}
+
+.mypage .header {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin-bottom: 30px;
+	background-color: #eb6100;
+	padding: 0px 20px;
+	color: white;
+	font-weight: 600;
+}
+
+.mypage .logout-button {
+	margin-left: auto;
+}
+
+.mypage .btn--white{
+  color: #eb6100;
+  background-color: #fff;
+}
+
+.mypage .input-container{
+	width: calc(100% - 30px);
+	display: flex;
+	margin: 30px;
+	margin-bottom: 10px;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: center;
+	margin-top: auto;
+}
+
+.mypage .form-control {
+  width: 30%;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.mypage .form-control:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.mypage .result-container{
+	display: flex;
+	flex-flow: row;
+	background-color: #fff;
+	justify-content: center;
+}
+
+.mypage .btn {
+  width: 80px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+

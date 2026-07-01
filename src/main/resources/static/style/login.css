@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.login .register-user {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login .register-user a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login .register-user a:hover {
+  text-decoration: underline;
+}
