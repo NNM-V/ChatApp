@@ -13,11 +13,11 @@
 # Private chat application
 
 ## Table of Contents
--About the Project
--Environment
--Directory
--How to Build
--How to Use
+- About the Project
+- Environment
+- Directory
+- How to Build
+- How to Use
 
 ## About the Project
 Secured one on one private chat web application with SpringSecurity and WebSocket.
