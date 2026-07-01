@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# SpringBoot config
+src/main/resources/application_copy.properties

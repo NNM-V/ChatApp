@@ -20,8 +20,8 @@
 		</div>
 		<!-- form starts here -->
 		<form th:action="@{/mypage}" method="post">
+			<!-- correspondent search area -->
 			<div class="input-container">
-				<!-- friend search box -->
 				<input type="search" name="receiverName" class="form-control" placeholder="Serch users.." >
 				<button type="submit" name="submit" class="btn btn--orange">Submit</button>
 			</div>
@@ -37,6 +37,7 @@
 					</div>
 				<!-- show error message if user chose themselves-->
 				<p th:if="${sameUser}">You cannot choose yourself</p>
+				<!-- show error message if user not found-->
 				<p th:if="${receiverNotFound}">User not found</p>
 			</div>
 			

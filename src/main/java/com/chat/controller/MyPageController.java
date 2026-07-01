@@ -66,6 +66,7 @@ public class MyPageController {
 	
 	@PostMapping("/chat")
 	public String postChat(){
+		//Redirect to chat page if "talk" button is pressed 
 		return "redirect:/chat";
 	}
 }
