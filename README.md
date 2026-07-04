@@ -40,16 +40,14 @@ Secured one on one private chat web application with SpringSecurity and WebSocke
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
-├── src
-│   ├── main
-│   └── test
-└── target
-    ├── classes
-    ├── generated-sources
-    ├── generated-test-sources
-    ├── maven-status
-    ├── spring-aot
-    └── test-classes
+├── README.md
+└── src
+    ├── main
+    │   ├── java
+    │   └── resources
+    └── test
+        ├── java
+        └── resources
 ```
 
 ## How to Build
