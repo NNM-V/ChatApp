@@ -52,32 +52,36 @@ Secured one on one private chat web application with SpringSecurity and WebSocke
     └── test-classes
 ```
 
-## How to Bulid
-1.Clone the repository to your local enviroment.
+## How to Build
+1.Clone the repository to your local environment.
+```bash
+git clone https://github.com/NNM-V/ChatApp.git
+```
+2.Open a terminal and create a MySQL database to store the user data on your local environment.
 
-2.Move to directory that contains the app.
+2.Move to directory that contains the application on the terminal.
 
-3.Creat MySQLDatabase on your local enviroment.
-
-4.Open "applications.properties" file and change datasource setting based on your local enviroment.
+3.Open "application.properties" file from under the directory below and change datasource settings based on database you created on step 2.
+```bash
+ChatApp/src/main/resources
+```
 
 5.Uncomment "#spring.sql.init.mode=always" in "applications.properties" for initial build.
 
-6.Run the program with maven.
+6.Return to the ChatApp root directory and run the program with maven.
 ```bash
 ./mvnw spring-boot:run
 ```
 
-7.Commentout"#spring.sql.init.mode=always" from process 5.
+7.Comment out "#spring.sql.init.mode=always" again after completing step 5.
 
 ## How to Use
-1. Open the application in two different browsers.
+1.Open the application in two different browsers.
 
-2.Use the Login information created "data.sql" and login to the application.
-The Password for both "Admin" and "User" is "Password#".
+2.Login to the application using user account created under "users" table in your local database. The Password for both "Admin" and "User" is "Password#".
 
-3.Type in the user you want to communicate in searchbox of "mypage".
+3.Enter the username of the person you want to communicate in searchbox on "mypage".
 
-4.Press Talk button to start the chat.
+4.Press "Talk" button to start the chat.
 
-5.You can also use the  Login page to register a new account.
+5.You can also use the "login" page to register a new account.
